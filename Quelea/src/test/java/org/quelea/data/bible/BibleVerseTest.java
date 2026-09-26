@@ -25,7 +25,7 @@ public class BibleVerseTest {
         field.set(object, value);
     }
 
-    private static Object getPrivateField( Object object, String fieldName) throws Exception {
+    private static Object getPrivateField(Object object, String fieldName) throws Exception {
         Field field = object.getClass().getDeclaredField(fieldName);
         field.setAccessible(true);
         return field.get(object);
@@ -50,11 +50,16 @@ public class BibleVerseTest {
 
     @Test
     void testGetChapter() throws Exception {
-        
+        Constructor<BibleChapter> pcc = BibleChapter.class.getDeclaredConstructor(int.class);
+        pcc.setAccessible(true);
+        BibleChapter bibleChapter = pcc.newInstance(2);
+        setPrivateField(bibleVerse, "chapter", bibleChapter);
+        BibleChapter chapter = bibleVerse.getChapter();
+        assertEquals(bibleChapter, chapter);
     }
 
     @Test
-    void testGetChapterNum() throws Exception{
+    void testGetChapterNum() throws Exception {
         setPrivateField(bibleVerse, "chapterNum", 7);
         int chapterNum = bibleVerse.getChapterNum();
         assertEquals(7, chapterNum);
@@ -79,8 +84,13 @@ public class BibleVerseTest {
     }
 
     @Test
-    void testGetParent() {
-
+    void testGetParent() throws Exception {
+        Constructor<BibleChapter> pcc = BibleChapter.class.getDeclaredConstructor(int.class);
+        pcc.setAccessible(true);
+        BibleChapter bibleChapter = pcc.newInstance(2);
+        setPrivateField(bibleVerse, "chapter", bibleChapter);
+        BibleChapter chapter = bibleVerse.getChapter();
+        assertEquals(bibleChapter, chapter);
     }
 
     @Test
@@ -118,21 +128,26 @@ public class BibleVerseTest {
     }
 
     @Test
-    void testParseXML() {
+    void testParseXML() throws Exception {
 
     }
 
     @Test
-    void testSetChapter() {
-
+    void testSetChapter() throws Exception {
+        Constructor<BibleChapter> pcc = BibleChapter.class.getDeclaredConstructor(int.class);
+        pcc.setAccessible(true);
+        BibleChapter bibleChapter = pcc.newInstance(2);
+        bibleVerse.setChapter(bibleChapter);
+        BibleChapter chapter = (BibleChapter) getPrivateField(bibleVerse, "chapter");
+        assertEquals(bibleChapter, chapter);
     }
 
     @Test
     void testSetChapterNum() throws Exception {
         Method method = bibleVerse.getClass().getDeclaredMethod("setChapterNum", int.class);
         method.setAccessible(true);
-        method.invoke(bibleVerse,7);
-        int chapterNum = (int)getPrivateField(bibleVerse, "chapterNum");
+        method.invoke(bibleVerse, 7);
+        int chapterNum = (int) getPrivateField(bibleVerse, "chapterNum");
         assertEquals(7, chapterNum);
     }
 
@@ -148,7 +163,14 @@ public class BibleVerseTest {
     }
 
     @Test
-    void testToXML() {
+    void testToXML() throws Exception {
+        setPrivateField(bibleVerse, "chapterNum", 1);
+        setPrivateField(bibleVerse, "num", 1);
+        setPrivateField(bibleVerse, "verse", "No princípio");
 
+        String result = bibleVerse.toXML();
+        assertEquals(
+                "<vers cnumber=\"1\" vnumber=\"1\">No princípio</vers>",
+                result);
     }
 }

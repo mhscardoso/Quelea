@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import org.w3c.dom.Node;
 
-// Import correto de todas as asserções do JUnit 5 Jupiter
 import static org.junit.jupiter.api.Assertions.*; 
 
 import java.io.StringReader;
@@ -59,88 +58,128 @@ public class BibleVerseTest {
         assertEquals(true, result);
     }
 
-    @Test // Caso 1: 
+    @Test // Caso 1: cnumber null - cria BibleVerse sem chapter e chapterNum
     void testParseXML_1() throws Exception{
-        String xmlContent = 
+        String xmlContent = "<vers vnumber=\"2\">No meio</vers>";
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
         Node node = doc.getDocumentElement();
 
         BibleVerse createdBibleVerse = BibleVerse.parseXML(node);
+        BibleChapter createdBibleChapter = createdBibleVerse.getChapter();
 
-        assertEquals(null, createdBibleVerse);
+        assertNull(createdBibleChapter);
+        assertNotNull(createdBibleVerse);
+
+        assertEquals(2, createdBibleVerse.getNum());
+        assertEquals(0, createdBibleVerse.getChapterNum());
+        assertEquals("No meio", createdBibleVerse.getVerseText());
     }
 
-    @Test // Caso 2: 
+    @Test // Caso 2: Usando cnumber + vnumber
     void testParseXML_2() throws Exception{
-        String xmlContent = 
+        String xmlContent = "<vers cnumber =\"1\" vnumber=\"2\">No meio</vers>";
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
         Node node = doc.getDocumentElement();
 
         BibleVerse createdBibleVerse = BibleVerse.parseXML(node);
+        BibleChapter createdBibleChapter = createdBibleVerse.getChapter();
 
-        assertEquals(bibleVerse, createdBibleVerse);
+        assertNotNull(createdBibleVerse);
+        assertEquals(2, createdBibleVerse.getNum());
+        assertEquals(1, createdBibleVerse.getChapterNum());
+        assertEquals("No meio", createdBibleVerse.getVerseText());
+
+        assertNotNull(createdBibleChapter);
+        assertEquals(1, createdBibleChapter.getNum());
     }
 
-    @Test // Caso 3: 
+    @Test // Caso 3: Usando cnumber + number
     void testParseXML_3() throws Exception{
-        String xmlContent = 
+        String xmlContent = "<vers cnumber =\"1\" number=\"2\">No meio</vers>";
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
         Node node = doc.getDocumentElement();
 
         BibleVerse createdBibleVerse = BibleVerse.parseXML(node);
+        BibleChapter createdBibleChapter = createdBibleVerse.getChapter();
 
-        assertEquals(bibleVerse, createdBibleVerse);
+        assertNotNull(createdBibleVerse);
+        assertEquals(2, createdBibleVerse.getNum());
+        assertEquals(1, createdBibleVerse.getChapterNum());
+        assertEquals("No meio", createdBibleVerse.getVerseText());
+
+        assertNotNull(createdBibleChapter);
+        assertEquals(1, createdBibleChapter.getNum());
     }
 
-    @Test  // Caso 4: 
+    @Test  // Caso 4: Usando cnumber + n
     void testParseXML_4() throws Exception{
-        String xmlContent = 
+        String xmlContent = "<vers cnumber =\"1\" n=\"2\">No meio</vers>";
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
         Node node = doc.getDocumentElement();
 
         BibleVerse createdBibleVerse = BibleVerse.parseXML(node);
+        BibleChapter createdBibleChapter = createdBibleVerse.getChapter();
 
-        assertEquals(bibleVerse, createdBibleVerse);
+        assertNotNull(createdBibleVerse);
+        assertEquals(2, createdBibleVerse.getNum());
+        assertEquals(1, createdBibleVerse.getChapterNum());
+        assertEquals("No meio", createdBibleVerse.getVerseText());
+
+        assertNotNull(createdBibleChapter);
+        assertEquals(1, createdBibleChapter.getNum());
     }
 
-    @Test  // Caso 5: 
+    @Test  // Caso 5: Usando cnumber + id
     void testParseXML_5() throws Exception{
-        String xmlContent = 
+        String xmlContent = "<vers cnumber =\"1\" id=\"2\">No meio</vers>";
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
         Node node = doc.getDocumentElement();
 
         BibleVerse createdBibleVerse = BibleVerse.parseXML(node);
+        BibleChapter createdBibleChapter = createdBibleVerse.getChapter();
 
-        assertEquals(bibleVerse, createdBibleVerse);
+        assertNotNull(createdBibleVerse);
+        assertEquals(2, createdBibleVerse.getNum());
+        assertEquals(1, createdBibleVerse.getChapterNum());
+        assertEquals("No meio", createdBibleVerse.getVerseText());
+
+        assertNotNull(createdBibleChapter);
+        assertEquals(1, createdBibleChapter.getNum());
     }
 
-    @Test  // Caso 6: 
+    @Test  // Caso 6: Usando cnumber + osisID
     void testParseXML_6() throws Exception{
-        String xmlContent = 
+        String xmlContent = "<vers cnumber =\"1\" osisID=\"2\">No meio</vers>";
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
         Node node = doc.getDocumentElement();
 
         BibleVerse createdBibleVerse = BibleVerse.parseXML(node);
+        BibleChapter createdBibleChapter = createdBibleVerse.getChapter();
 
-        assertEquals(bibleVerse, createdBibleVerse);
+        assertNotNull(createdBibleVerse);
+        assertEquals(2, createdBibleVerse.getNum());
+        assertEquals(1, createdBibleVerse.getChapterNum());
+        assertEquals("No meio", createdBibleVerse.getVerseText());
+
+        assertNotNull(createdBibleChapter);
+        assertEquals(1, createdBibleChapter.getNum());
     }
 
-
-    @Test  // Caso 7: 
+    @Test  // Caso 7: Exceção de formatação de número de capítulo (retorna null)
     void testParseXML_7() throws Exception{
-        String xmlContent = 
+        String xmlContent = "<vers cnumber =\"1\" vnumber=\"nan\">No meio</vers>";
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
@@ -148,9 +187,21 @@ public class BibleVerseTest {
 
         BibleVerse createdBibleVerse = BibleVerse.parseXML(node);
 
-        assertEquals(bibleVerse, createdBibleVerse);
+        assertNull(createdBibleVerse);
     }
 
+    @Test // Caso 8: Exceção de formatação no cnumber (lança NumberFormatException)
+    void testParseXML_8() throws Exception {
+        String xmlContent = "<vers cnumber=\"nan\" vnumber=\"1\">No meio</vers>";
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
+        Node node = doc.getDocumentElement();
+
+        assertThrows(NumberFormatException.class, () -> {
+            BibleVerse.parseXML(node);
+        });
+    }
 
     @Test
     void testHashCode() {

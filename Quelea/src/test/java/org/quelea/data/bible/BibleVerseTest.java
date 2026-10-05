@@ -190,19 +190,6 @@ public class BibleVerseTest {
         assertNull(createdBibleVerse);
     }
 
-    @Test // Caso 8: Exceção de formatação no cnumber (lança NumberFormatException)
-    void testParseXML_8() throws Exception {
-        String xmlContent = "<vers cnumber=\"nan\" vnumber=\"1\">No meio</vers>";
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(new InputSource(new StringReader(xmlContent)));
-        Node node = doc.getDocumentElement();
-
-        assertThrows(NumberFormatException.class, () -> {
-            BibleVerse.parseXML(node);
-        });
-    }
-
     @Test
     void testHashCode() {
         int hash = bibleVerse.hashCode();

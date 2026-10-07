@@ -1,41 +1,24 @@
-# Quelea
+## Entregáveis 
 
-**Are you here to download the latest version? Great! You want one of these:**
+[Plano de Teste](https://docs.google.com/document/d/1W9rzVyTb6wh5Y_6eOLU4Ks-7dwK2GycstxrSxLhgEn8/edit?usp=sharing)
+[Casos de Testes Manuais](https://docs.google.com/document/d/1QJ5FkHs9aCBI0sHBZsJFooUV3UZgR6g0vYblQULsLe4/edit?usp=sharing)
+[Relatório de Erros](https://docs.google.com/document/d/1nW5-w_wN1wD6EOEg169A-AuM_uzNzJeRYREIW40EznY/edit?usp=sharing)
 
-[**2024.0 - Windows x64**](https://github.com/quelea-projection/Quelea/releases/download/v2024.0/quelea-2024.0.1-x64-windows-install.exe)
+[GithubIssue]()
 
-[**2024.0 - Cross platform (requires Java)**](https://github.com/quelea-projection/Quelea/releases/download/v2024.0/quelea-2024.0-crossplatform-install.jar)
+### Testes Unitários
 
-[**2024.0 - Mac**](https://github.com/quelea-projection/Quelea/releases/download/v2024.0/quelea-2024.0-mac.zip)
+[MultimediaPanel - João]()
+[PlainTextParser - Matheus]()
+[WordDrawer - Mikaela]()
+[BibleVerse - Nick](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/test/java/org/quelea/data/bible/BibleVerseTest.java)
+[ScheduleSaver - Taísa]()
 
-[**2024.0 - Linux**](https://snapcraft.io/quelea)<br>
+### Testes de Integração
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/quelea)
+[multimedia - João]()
+[importexport - Matheus]()
+[main(Windows) - Mikaela]()
+[Bible - Nick]()
+[Schedule - Taísa]()
 
-[![Get it from Flathub](https://flathub.org/api/badge?svg&locale=en)](https://flathub.org/en/apps/org.quelea.Quelea)
-
-**Problems or suggestions? [Head over to our forum and feel free to ask away](https://quelea.discourse.group/). We don't bite!**
-
-![screenshot](screenshot.png)
-
-## CI releases
-You can see the latest CI release [here](https://github.com/quelea-projection/Quelea/releases/tag/CI-RELEASE). Windows, Mac and Crossplatform installers are provided.
-
-If you're using Linux, then no separate download is needed. Just [install snapd](https://snapcraft.io/docs/installing-snapd) and run `sudo snap install --edge quelea` to install the latest CI version.
-
-CI releases are automatically built from the latest code in this repository, and thus are not fully tested. **They should not be used in production settings.**
-
-## Documentation
-
-If you're interested in learning more about how to use Quelea, the documentation can be found [here](https://quelea-projection.github.io/docs/).
-
-## I've found a bug!
-Please report it so we can fix it! Feel free to [create an issue](https://github.com/quelea-projection/Quelea/issues), and provide as much information as you can on how to reproduce the problem (step by step instructions for recreating the issue after starting Quelea are very useful.) After recreating the problem, you should also attach your [debug log](https://quelea-projection.github.io/docs/Debug_log) - this may give us a few technical clues as to what's going on.
-
-Please note that if we can't recreate a bug, then we can't fix it, so providing as much information as you can here is very important.
-
-## I'd like to contribute
-Great! Please see our specific [contributing guidelines](CONTRIBUTING.md) for more information.
-
-## Signing policy
-Free code signing on Windows provided by SignPath.io. Please see [SIGNING_POLICY.md](SIGNING_POLICY.md) for more information.

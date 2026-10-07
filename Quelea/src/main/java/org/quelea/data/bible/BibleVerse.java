@@ -41,6 +41,13 @@ public final class BibleVerse implements BibleInterface, Serializable {
         //For internal use
     }
 
+    public BibleVerse(BibleChapter chapter, String verse, int num) {
+        this.chapter = chapter;
+        this.chapterNum = (chapter != null) ? chapter.getNum() : 0;
+        this.verse = verse;
+        this.num = num;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;

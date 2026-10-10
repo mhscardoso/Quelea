@@ -10,23 +10,23 @@
 ### Testes Unitários  
 
 #### ChordTransposer - João
-[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/chord/ChordTransposer.java)
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/chord/ChordTransposer.java)  
 [Testes]()
 
 #### PlainTextParser - Matheus 
-[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/services/importexport/PlainTextParser.java)
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/services/importexport/PlainTextParser.java)  
 [Testes]()
 
 #### WordDrawer - Mikaela  
-[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/windows/main/WordDrawer.java)
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/windows/main/WordDrawer.java)  
 [Testes]()
 
 #### BibleVerse - Nick
-[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/bible/BibleVerse.java)
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/bible/BibleVerse.java)  
 [Testes](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/test/java/org/quelea/data/bible/BibleVerseTest.java)
 
 #### ScheduleSaver - Taísa
-[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/ScheduleSaver.java)
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/ScheduleSaver.java)  
 [Testes]()
 
 ### Testes de Integração  

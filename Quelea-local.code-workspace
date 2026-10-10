@@ -1,0 +1,25 @@
+{
+  "folders": [{ "path": "Quelea" }],
+  "settings": {
+    "java.jdt.ls.java.home": "/home/mikaela/Projetos/Quelea/.local-tools/jdk-25",
+    "java.import.gradle.java.home": "/home/mikaela/Projetos/Quelea/.local-tools/jdk-25",
+    "java.import.gradle.user.home": "/home/mikaela/Projetos/Quelea/.local-tools/gradle",
+    "java.configuration.runtimes": [
+      { "name": "JavaSE-25", "path": "/home/mikaela/Projetos/Quelea/.local-tools/jdk-25", "default": true }
+    ],
+    "terminal.integrated.env.linux": {
+      "JAVA_HOME": "/home/mikaela/Projetos/Quelea/.local-tools/jdk-25",
+      "GRADLE_USER_HOME": "/home/mikaela/Projetos/Quelea/.local-tools/gradle",
+      "PATH": "/home/mikaela/Projetos/Quelea/.local-tools/jdk-25/bin:${env:PATH}"
+    }
+  },
+  "extensions": { "recommendations": ["vscjava.vscode-java-pack", "vscjava.vscode-gradle"] },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      { "label": "Quelea: executar", "type": "shell", "command": "bash", "args": ["../dev.sh", "run"], "options": { "cwd": "${workspaceFolder}" }, "problemMatcher": [] },
+      { "label": "Quelea: compilar", "type": "shell", "command": "bash", "args": ["../dev.sh", "classes"], "options": { "cwd": "${workspaceFolder}" }, "group": { "kind": "build", "isDefault": true }, "problemMatcher": [] },
+      { "label": "Quelea: testar", "type": "shell", "command": "bash", "args": ["../dev.sh", "test"], "options": { "cwd": "${workspaceFolder}" }, "group": "test", "problemMatcher": [] }
+    ]
+  }
+}

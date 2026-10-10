@@ -33,3 +33,5 @@ flatpak/**/repo
 
 Thumbs.db
 gs.msi
+/bin/
+/.local-tools/

@@ -4,16 +4,30 @@
 [Casos de Testes Manuais](https://docs.google.com/document/d/1QJ5FkHs9aCBI0sHBZsJFooUV3UZgR6g0vYblQULsLe4/edit?usp=sharing)  
 [Relatório de Erros](https://docs.google.com/document/d/1nW5-w_wN1wD6EOEg169A-AuM_uzNzJeRYREIW40EznY/edit?usp=sharing)  
 [Caso de Teste + Relatório pelo TestLink](https://github.com/mhscardoso/Quelea/blob/master/RelatorioTestLink.pdf)  
-
+[Slides](https://docs.google.com/presentation/d/1-RE2-FJPkWt-TXfK4qNGRu1eSzFybjdGFBMprMcyOK0/edit?usp=sharing)
 [GithubIssue]()  
 
 ### Testes Unitários  
 
-[MultimediaPanel - João]()  
-[PlainTextParser - Matheus]()  
-[WordDrawer - Mikaela]()  
-[BibleVerse - Nick](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/test/java/org/quelea/data/bible/BibleVerseTest.java)  
-[ScheduleSaver - Taísa]()  
+#### ChordTransposer - João
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/chord/ChordTransposer.java)
+[Testes]()
+
+#### PlainTextParser - Matheus 
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/services/importexport/PlainTextParser.java)
+[Testes]()
+
+#### WordDrawer - Mikaela  
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/windows/main/WordDrawer.java)
+[Testes]()
+
+#### BibleVerse - Nick
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/bible/BibleVerse.java)
+[Testes](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/test/java/org/quelea/data/bible/BibleVerseTest.java)
+
+#### ScheduleSaver - Taísa
+[Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/ScheduleSaver.java)
+[Testes]()
 
 ### Testes de Integração  
 

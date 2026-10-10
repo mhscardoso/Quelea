@@ -4,7 +4,7 @@
 [Casos de Testes Manuais](https://docs.google.com/document/d/1QJ5FkHs9aCBI0sHBZsJFooUV3UZgR6g0vYblQULsLe4/edit?usp=sharing)  
 [Relatório de Erros](https://docs.google.com/document/d/1nW5-w_wN1wD6EOEg169A-AuM_uzNzJeRYREIW40EznY/edit?usp=sharing)  
 [Caso de Teste + Relatório pelo TestLink](https://github.com/mhscardoso/Quelea/blob/master/RelatorioTestLink.pdf)  
-[Slides](https://docs.google.com/presentation/d/1-RE2-FJPkWt-TXfK4qNGRu1eSzFybjdGFBMprMcyOK0/edit?usp=sharing)
+[Slides](https://docs.google.com/presentation/d/1-RE2-FJPkWt-TXfK4qNGRu1eSzFybjdGFBMprMcyOK0/edit?usp=sharing)  
 [GithubIssue]()  
 
 ### Testes Unitários  

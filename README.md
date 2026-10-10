@@ -31,7 +31,7 @@
 
 ### Testes de Integração  
 
-[multimedia - João]()  
+[chord - João]()  
 [importexport - Matheus]()  
 [main(Windows) - Mikaela]()  
 [Bible - Nick]()  

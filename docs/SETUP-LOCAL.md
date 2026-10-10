@@ -13,7 +13,8 @@ Na raiz do repositório:
 
 ```bash
 bash dev.sh classes   # Compilar
-bash dev.sh test      # Testar
+bash dev.sh test      # Testes unitários
+bash dev.sh integrationTest  # Testes de integração (requer sessão gráfica)
 bash dev.sh run       # Abrir o aplicativo
 ```
 
@@ -65,7 +66,7 @@ Para executar somente essa classe, na raiz do repositório:
 bash dev.sh test --tests '*TesteWordDrawer'
 ```
 
-Para executar todos os testes:
+Para executar todos os testes unitários:
 
 ```bash
 bash dev.sh test
@@ -87,3 +88,51 @@ Os 15 testes anteriores passaram, totalizando **48 testes: 43 aprovados e 5 falh
 
 Após executar a suíte, o relatório fica em
 `Quelea/build/reports/tests/test/index.html`.
+
+## Testes de integração do WordDrawer
+
+O arquivo [TesteIntegracaoWordDrawer.java](../Quelea/src/integrationTest/java/org/quelea/windows/main/TesteIntegracaoWordDrawer.java)
+exercita o fluxo `SongDisplayable/BiblePassage → StageDrawer → WordDrawer → DisplayCanvas`
+com objetos reais. Usa JUnit Jupiter e JavaFX, sem Mockito ou substituição dos
+métodos de desenho. As asserções examinam o conteúdo e as propriedades dos nós
+JavaFX produzidos pelo fluxo.
+
+| Caso | Integração verificada |
+|---|---|
+| Canção e troca de seção | O parsing da letra produz seções; selecionar outra seção substitui o grupo anterior no canvas. |
+| Redimensionamento | Uma nova dimensão reduz a fonte, preserva o texto e ajusta o fundo. |
+| Cifras | A posição da cifra acompanha a letra seguinte; a configuração de exibição filtra as cifras do modelo. |
+| Fonte uniforme | Seções de tamanhos diferentes recebem a mesma fonte quando a opção está ativa. |
+| Passagem bíblica | Um versículo real passa pela quebra de linhas e cria nós de sobrescrito. |
+| Espaçamento | Alterar a preferência modifica a distância vertical entre os nós de texto. |
+| Remoção de texto | `eraseText()` remove os nós da letra, mantendo a imagem de fundo. |
+| Estado de limpeza | O estado do canvas oculta o grupo de texto e permite exibi-lo novamente após redesenhar. |
+| Tema | A cor configurada é aplicada à imagem real de fundo, removendo a anterior. |
+| Escala | Uma janela real, não exibida, fornece a largura de referência; também são verificados janela ausente e largura zero. |
+
+Na validação inicial, **10 testes passaram, sem falhas ou casos ignorados**.
+Eles complementam os testes unitários; não corrigem nem substituem os cinco
+casos unitários que expõem defeitos conhecidos.
+
+```bash
+# Somente integração
+bash dev.sh integrationTest
+
+# As duas suítes; --continue permite executar integração mesmo se a unitária falhar
+bash dev.sh test integrationTest --continue
+```
+
+A tarefa `integrationTest` usa fontes separadas em `src/integrationTest/java`,
+uma JVM própria, execução sequencial e preferências/logs em diretório temporário.
+As operações gráficas são executadas na thread JavaFX, com espera limitada;
+as janelas não são exibidas. O processo ainda precisa de uma sessão gráfica
+disponível. Em CI Linux sem display, é necessário fornecer um servidor virtual,
+como Xvfb; essa execução em CI não foi validada nesta etapa.
+
+O relatório desta suíte fica em
+`Quelea/build/reports/tests/integrationTest/index.html`, separado do relatório
+unitário. A tarefa é explícita e não é adicionada automaticamente a `check`,
+para que compilações sem sessão gráfica continuem executando a suíte unitária.
+
+Esses testes verificam integração e a árvore de nós do JavaFX, não comparação
+de screenshots, duração visual das transições ou o fluxo de `LyricDrawer`.

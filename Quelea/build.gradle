@@ -294,6 +294,34 @@ test {
     useJUnitPlatform()
 }
 
+// Separate JVM and sources: real JavaFX integration must not share the unit-test mocks.
+sourceSets {
+    integrationTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+configurations {
+    integrationTestImplementation.extendsFrom implementation
+    integrationTestRuntimeOnly.extendsFrom runtimeOnly
+}
+dependencies {
+    integrationTestImplementation 'org.junit.jupiter:junit-jupiter-api:6.0.0'
+    integrationTestRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:6.0.0'
+    integrationTestRuntimeOnly 'org.junit.platform:junit-platform-launcher:6.0.0'
+}
+tasks.register('integrationTest', Test) {
+    description = 'Runs WordDrawer integration tests with real JavaFX components (requires a display).'
+    group = 'verification'
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    useJUnitPlatform()
+    workingDir = projectDir
+    maxParallelForks = 1
+    systemProperty 'junit.jupiter.execution.parallel.enabled', 'false'
+    shouldRunAfter tasks.named('test')
+}
+
 jar {
     manifest {
         attributes (

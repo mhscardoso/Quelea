@@ -287,6 +287,7 @@ dependencies {
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '6.0.0'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '6.0.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:6.0.0'
+    testImplementation 'org.mockito:mockito-core:5.20.0'
 }
 
 test {

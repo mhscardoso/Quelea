@@ -11,7 +11,7 @@
 
 #### ChordTransposer - João
 [Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/chord/ChordTransposer.java)  
-[Testes]()
+[Testes](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/test/java/org/quelea/data/chord/ChordTransposerTest.java)
 
 #### PlainTextParser - Matheus 
 [Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/services/importexport/PlainTextParser.java)  

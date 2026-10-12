@@ -33,3 +33,18 @@ flatpak/**/repo
 
 Thumbs.db
 gs.msi
+
+# Eclipse / Buildship
+.project
+.classpath
+.settings/
+.metadata/
+*.launch
+Quelea/.project
+Quelea/.classpath
+Quelea/.settings/
+Quelea/bin/
+
+# Build do Gradle (caso executado a partir da raiz)
+build/
+.gradle/

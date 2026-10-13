@@ -15,7 +15,7 @@
 
 #### PlainTextParser - Matheus 
 [Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/services/importexport/PlainTextParser.java)  
-[Testes]()
+[Testes](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/test/java/org/quelea/services/importexport/PlainTextParserTest.java)
 
 #### WordDrawer - Mikaela  
 [Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/windows/main/WordDrawer.java)  

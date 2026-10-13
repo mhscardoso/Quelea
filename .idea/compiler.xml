@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Quelea.Quelea.main" target="25" />
+      <module name="Quelea.Quelea.test" target="25" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Quelea.Quelea" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="Quelea.Quelea.main" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="Quelea.Quelea.main~1" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="Quelea.Quelea.test" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="Quelea.Quelea.test~1" options="-Xlint:deprecation -Xlint:unchecked" />
+    </option>
+  </component>
+</project>

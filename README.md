@@ -27,7 +27,7 @@
 
 #### ScheduleSaver - Taísa
 [Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/ScheduleSaver.java)  
-[Testes]()
+[Testes](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/test/java/org/quelea/data/ScheduleSaverTest.java)
 
 ### Testes de Integração  
 

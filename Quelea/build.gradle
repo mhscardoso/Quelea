@@ -286,11 +286,13 @@ dependencies {
 
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '6.0.0'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '6.0.0'
+
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '6.0.0'
     testImplementation 'org.assertj:assertj-core:3.27.3'
     testImplementation 'org.mockito:mockito-core:5.24.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.24.0'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:6.0.0'
+
 }
 
 test {
@@ -339,4 +341,8 @@ tasks.register('releaseSummary', JavaExec) {
 tasks.named("izPackCreateInstaller") {
     dependsOn(tasks.named("zipMacPackr"))
     dependsOn(tasks.named('tar'))
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
 }

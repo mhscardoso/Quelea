@@ -19,7 +19,7 @@
 
 #### WordDrawer - Mikaela  
 [Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/windows/main/WordDrawer.java)  
-[Testes]()
+[Testes](https://github.com/mhscardoso/Quelea/tree/master/Quelea/src/test/java/org/quelea/windows/main)
 
 #### BibleVerse - Nick
 [Classe base](https://github.com/mhscardoso/Quelea/blob/master/Quelea/src/main/java/org/quelea/data/bible/BibleVerse.java)  
